@@ -13,7 +13,7 @@ public class TaskHandlerApplication extends SpringBootServletInitializer {
 	}
 
 	@Override
-	 protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-	  return application.sources(TaskHandlerApplication.class);
-	 }
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(TaskHandlerApplication.class);
+	}
 }
