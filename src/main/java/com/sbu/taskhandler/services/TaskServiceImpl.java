@@ -14,7 +14,7 @@ import com.sbu.taskhandler.repositories.TaskRepository;
 @Service
 @Transactional(readOnly = true)
 public class TaskServiceImpl implements TaskService {
-	
+
 	@Autowired
 	private TaskRepository taskRepository;
 
@@ -44,8 +44,8 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public List<Task> searchTasks(String taskName, String parentTaskName, Integer priorityFrom, 
-			Integer priorityTo, Date startDate, Date endDate) {
+	public List<Task> searchTasks(String taskName, String parentTaskName, Integer priorityFrom, Integer priorityTo,
+			Date startDate, Date endDate) {
 		return taskRepository.findTasks(taskName, parentTaskName, priorityFrom, priorityTo, startDate, endDate);
 	}
 

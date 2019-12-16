@@ -20,20 +20,25 @@ public class TaskConverter {
 		return task;
 	}
 
-	public static List<TaskVO> toDto(List<Task> tasks) {
+	public static List<TaskVO> toDtos(List<Task> tasks) {
 		List<TaskVO> tasksList = new ArrayList<>();
 		for (Task task : tasks) {
-			TaskVO taskVO = new TaskVO();
-			taskVO.setTaskId(task.getTaskId());
-			taskVO.setTask(task.getTask());
-			taskVO.setParentTaskId(task.getParentTask().getParentId());
-			taskVO.setPriority(task.getPriority());
-			taskVO.setStartDate(task.getStartDate());
-			taskVO.setEndDate(task.getEndDate());
-			taskVO.setIsFinished(task.getIsFinished());
-			
+			TaskVO taskVO = toDto(task);
+
 			tasksList.add(taskVO);
 		}
 		return tasksList;
+	}
+
+	public static TaskVO toDto(Task task) {
+		TaskVO taskVO = new TaskVO();
+		taskVO.setTaskId(task.getTaskId());
+		taskVO.setTask(task.getTask());
+		taskVO.setParentTaskId(task.getParentTask().getParentId());
+		taskVO.setPriority(task.getPriority());
+		taskVO.setStartDate(task.getStartDate());
+		taskVO.setEndDate(task.getEndDate());
+		taskVO.setIsFinished(task.getIsFinished());
+		return taskVO;
 	}
 }

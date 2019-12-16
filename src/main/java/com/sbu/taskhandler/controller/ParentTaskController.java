@@ -16,7 +16,7 @@ import com.sbu.taskhandler.services.ParentTaskService;
 public class ParentTaskController {
 	@Autowired
 	private ParentTaskService parentTaskService;
-	
+
 	@GetMapping("/parent/tasks")
 	public ResponseEntity<List<ParentTask>> list() {
 		return ResponseEntity.ok().body(parentTaskService.list());
